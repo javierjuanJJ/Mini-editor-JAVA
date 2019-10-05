@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -8,48 +13,35 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cipfpbatoi.act2.minieditor.AppController">
+<AnchorPane id="AnchorPane" prefHeight="593.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cipfpbatoi.act2.minieditor.AppController">
     <stylesheets>
         <URL value="@appcss.css" />
     </stylesheets>
    <children>
-      <HBox layoutX="14.0" layoutY="14.0" prefHeight="100.0" prefWidth="572.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
-         <children>
-            <Button fx:id="btnNuevo" mnemonicParsing="false" onAction="#handleNuevo" text="NUEVO">
-               <padding>
-                  <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
-               </padding>
-               <HBox.margin>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </HBox.margin>
-            </Button>
-            <Button fx:id="btnAbrir" mnemonicParsing="false" onAction="#handleAbrir" text="ABRIR">
-               <padding>
-                  <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
-               </padding>
-               <HBox.margin>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </HBox.margin>
-            </Button>
-            <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#handleGuardar" text="GUARDAR">
-               <padding>
-                  <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
-               </padding>
-               <HBox.margin>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </HBox.margin>
-            </Button>
-            <Button fx:id="btnCerrar" mnemonicParsing="false" onAction="#handleCerrar" text="CERRAR">
-               <padding>
-                  <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
-               </padding>
-               <HBox.margin>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </HBox.margin>
-            </Button>
-         </children>
-      </HBox>
-      <TextArea fx:id="taEditor" disable="true" layoutX="14.0" layoutY="119.0" prefHeight="200.0" prefWidth="200.0" promptText="Escribe aquí...." wrapText="true" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="119.0" />
-      <Label fx:id="lblInfo" layoutX="14.0" layoutY="362.0" prefHeight="24.0" prefWidth="572.0" text="Estado..." textAlignment="CENTER" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="362.0" />
+      <Button fx:id="btnNuevo" mnemonicParsing="false" onAction="#handleNuevo" onMouseClicked="#handleNuevo" text="NUEVO">
+         <padding>
+            <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+         </padding>
+      </Button>
+      <Button fx:id="btnAbrir" layoutX="90.0" mnemonicParsing="false" onAction="#handleAbrir" text="ABRIR">
+         <padding>
+            <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+         </padding>
+      </Button>
+      <Button fx:id="btnGuardar" layoutX="195.0" mnemonicParsing="false" onAction="#handleGuardar" text="GUARDAR">
+         <padding>
+            <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+         </padding>
+      </Button>
+      <Button fx:id="btnCerrar" layoutX="314.0" mnemonicParsing="false" onAction="#handleCerrar" text="CERRAR">
+         <padding>
+            <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+         </padding>
+      </Button>
+      <TextArea fx:id="taEditor" disable="true" layoutX="14.0" layoutY="217.0" prefHeight="196.0" prefWidth="572.0" promptText="Escribe aquí...." style="-fx-background-color: blue;" wrapText="true" AnchorPane.bottomAnchor="180.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="217.0" />
+      <Label fx:id="lblInfo" layoutX="14.0" layoutY="428.0" prefHeight="83.0" prefWidth="572.0" text="Estado..." textAlignment="CENTER" AnchorPane.bottomAnchor="82.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="428.0" />
+      <ChoiceBox fx:id="archivos_recientes" layoutX="436.0" layoutY="34.0" onMouseMoved="#mostrar_archivosRecientes" prefWidth="150.0" />
+      <Label layoutX="463.0" layoutY="14.0" text="Archivos recientes" />
+      <Button layoutX="469.0" layoutY="67.0" mnemonicParsing="false" onAction="#reciente" text="Abrir archivo" />
    </children>
 </AnchorPane>

@@ -225,12 +225,36 @@ public class AppController implements Initializable {
     }
     
     public void archivosRecientes() {
-    	List<String> todoElTexto = new ArrayList();
     	Path archivo_a_guardar = Paths.get(".","archivos_recientes.txt");
+    	List<String> contenido=null;
+    	List<String> todoElTexto = new ArrayList();
+    	List<String> todoElTexto2 = new ArrayList();
+    	List<String> todoElTexto_vacio = new ArrayList();
+    	int contador=0;
+		try {
+			contenido = Files.readAllLines(archivo_a_guardar);
+		} catch (IOException e1) {
+			// TODO Bloque catch generado automáticamente
+			e1.printStackTrace();
+		}
+    	for(String l: contenido) {
+    		todoElTexto.add(l);
+    	}
+    	todoElTexto.add(f.getAbsolutePath());
     	try {
-			Files.write(archivo_a_guardar, todoElTexto);
-			todoElTexto.add(f.getAbsolutePath());
-			Files.write(archivo_a_guardar, todoElTexto);
+			Files.write(archivo_a_guardar, todoElTexto_vacio);
+			
+			if (todoElTexto.size() < 6) {
+				Files.write(archivo_a_guardar, todoElTexto);
+			}
+			else{
+				for (contador=6;contador>0;contador--) {
+					todoElTexto2.add(todoElTexto.get(todoElTexto.size()-contador));
+				}
+				Files.write(archivo_a_guardar, todoElTexto2);
+			}
+			
+			
 		} catch (IOException e) {
 			// TODO Bloque catch generado automáticamente
 			e.printStackTrace();

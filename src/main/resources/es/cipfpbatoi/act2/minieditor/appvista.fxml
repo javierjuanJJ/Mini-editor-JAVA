@@ -13,35 +13,35 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="593.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cipfpbatoi.act2.minieditor.AppController">
+<AnchorPane id="AnchorPane" prefHeight="593.0" prefWidth="600.0" styleClass="campo_texto" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cipfpbatoi.act2.minieditor.AppController">
     <stylesheets>
         <URL value="@appcss.css" />
     </stylesheets>
    <children>
-      <Button fx:id="btnNuevo" mnemonicParsing="false" onAction="#handleNuevo" onMouseClicked="#handleNuevo" text="NUEVO">
+      <Button fx:id="btnNuevo" layoutX="143.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleNuevo" onMouseClicked="#handleNuevo" styleClass="nuevo" stylesheets="@appcss.css" text="NUEVO">
          <padding>
             <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
          </padding>
       </Button>
-      <Button fx:id="btnAbrir" layoutX="90.0" mnemonicParsing="false" onAction="#handleAbrir" text="ABRIR">
+      <Button fx:id="btnAbrir" layoutX="289.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleAbrir" styleClass="abrir" stylesheets="@appcss.css" text="ABRIR">
          <padding>
             <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
          </padding>
       </Button>
-      <Button fx:id="btnGuardar" layoutX="195.0" mnemonicParsing="false" onAction="#handleGuardar" text="GUARDAR">
+      <Button fx:id="btnGuardar" layoutX="135.0" layoutY="101.0" mnemonicParsing="false" onAction="#handleGuardar" styleClass="guardar" stylesheets="@appcss.css" text="GUARDAR">
          <padding>
             <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
          </padding>
       </Button>
-      <Button fx:id="btnCerrar" layoutX="314.0" mnemonicParsing="false" onAction="#handleCerrar" text="CERRAR">
+      <Button fx:id="btnCerrar" layoutX="284.0" layoutY="101.0" mnemonicParsing="false" onAction="#handleCerrar" styleClass="cerrar" stylesheets="@appcss.css" text="CERRAR">
          <padding>
             <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
          </padding>
       </Button>
-      <TextArea fx:id="taEditor" disable="true" layoutX="14.0" layoutY="217.0" prefHeight="196.0" prefWidth="572.0" promptText="Escribe aquí...." style="-fx-background-color: blue;" wrapText="true" AnchorPane.bottomAnchor="180.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="217.0" />
-      <Label fx:id="lblInfo" layoutX="14.0" layoutY="428.0" prefHeight="83.0" prefWidth="572.0" text="Estado..." textAlignment="CENTER" AnchorPane.bottomAnchor="82.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="428.0" />
-      <ChoiceBox fx:id="archivos_recientes" layoutX="436.0" layoutY="34.0" onMouseMoved="#mostrar_archivosRecientes" prefWidth="150.0" />
-      <Label layoutX="463.0" layoutY="14.0" text="Archivos recientes" />
-      <Button layoutX="469.0" layoutY="67.0" mnemonicParsing="false" onAction="#reciente" text="Abrir archivo" />
+      <TextArea fx:id="taEditor" disable="true" layoutX="14.0" layoutY="183.0" prefHeight="313.0" prefWidth="572.0" promptText="Escribe aquí...." styleClass="campo_texto" stylesheets="@appcss.css" wrapText="true" AnchorPane.bottomAnchor="97.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="183.0" />
+      <Label fx:id="lblInfo" layoutX="14.0" layoutY="496.0" prefHeight="83.0" prefWidth="572.0" text="Estado..." textAlignment="CENTER" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="496.0" />
+      <ChoiceBox fx:id="archivos_recientes" layoutX="436.0" layoutY="85.0" onMouseMoved="#mostrar_archivosRecientes" prefWidth="150.0" styleClass="archivos_recientes" stylesheets="@appcss.css" />
+      <Label layoutX="463.0" layoutY="35.0" text="Archivos recientes" />
+      <Button layoutX="469.0" layoutY="134.0" mnemonicParsing="false" onAction="#reciente" styleClass="abrir_archivo" stylesheets="@appcss.css" text="Abrir archivo" />
    </children>
 </AnchorPane>

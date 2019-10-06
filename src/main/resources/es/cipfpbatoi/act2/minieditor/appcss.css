@@ -1,7 +1,26 @@
-/*
- * Empty Stylesheet file.
- */
 
-.mainFxmlClass {
-
+.fondo_aplicacion {
+    -fx-background-color: #e2ffa6;
+}
+.nuevo{
+    -fx-background-color: #6699ff;
+}
+.abrir {
+    -fx-background-color: #6666ff;
+}
+.guardar {
+    -fx-background-color: #ff00ff;
+}
+.cerrar {
+    -fx-background-color: #00ff80;
+}
+.abrir_archivo {
+    -fx-background-color: #ff5050;
+}
+.archivos_recientes {
+    -fx-background-color: #996633;
+}
+.campo_texto {
+    -fx-background-color: #999966;
+    -fx-color: #000000;
 }

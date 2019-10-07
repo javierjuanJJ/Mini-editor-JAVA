@@ -43,5 +43,6 @@
       <ChoiceBox fx:id="archivos_recientes" layoutX="436.0" layoutY="85.0" onMouseMoved="#mostrar_archivosRecientes" prefWidth="150.0" styleClass="archivos_recientes" stylesheets="@appcss.css" />
       <Label layoutX="463.0" layoutY="35.0" text="Archivos recientes" />
       <Button layoutX="469.0" layoutY="134.0" mnemonicParsing="false" onAction="#reciente" styleClass="abrir_archivo" stylesheets="@appcss.css" text="Abrir archivo" />
+      <Button layoutX="11.0" layoutY="101.0" mnemonicParsing="false" onAction="#Guardarcomo" prefHeight="67.0" prefWidth="116.0" text="GUARDAR COMO" />
    </children>
 </AnchorPane>

@@ -1,5 +1,0 @@
-F:\Nueva carpeta (3)\Prueba\hola.txt
-F:\Nueva carpeta (3)\Prueba\123.txt
-F:\Nueva carpeta (3)\Prueba\7.txt
-F:\Nueva carpeta (3)\Prueba\6.txt
-F:\Nueva carpeta (2)\1.txt

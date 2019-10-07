@@ -34,7 +34,6 @@ public class App extends Application {
             
             AppController ac = loader.getController();
             ac.setEscenario(escenario);
-
             // Show the scene containing the root layout.            
             escenario.setScene(new Scene(escena));
             escenario.show();

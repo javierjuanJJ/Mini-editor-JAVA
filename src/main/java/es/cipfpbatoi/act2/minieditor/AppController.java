@@ -31,24 +31,58 @@ import javafx.stage.Stage;
  * @author sergio
  */
 public class AppController implements Initializable {
-
+	/**
+	 * Limite de los archivos recientes
+	 * en el archivo archivos_recientes.txt
+	 */
 	static final int klimite = 5;
+	/**
+	 * El campo de texto que se usa para escribir.
+	 */
 	@FXML
 	private TextArea taEditor;
+	/**
+	 * Etiqueta que muestra los caracteres 
+	 * y las lineas del fichero.
+	 */
 	@FXML
 	private Label lblInfo;
+	/**
+	 * El boton abrir.
+	 */
 	@FXML
 	private Button btnAbrir;
+	/**
+	 * El boton cerrar.
+	 */
 	@FXML
 	private Button btnCerrar;
+	/**
+	 * El boton guardar.
+	 */
 	@FXML
 	private Button btnGuardar;
+	/**
+	 * El boton nuevo.
+	 */
 	@FXML
 	private Button btnNuevo;
+	/**
+	 * Desplegable que muestra los archivos recientes.
+	 */
 	@FXML
 	private ChoiceBox archivos_recientes;
+	/**
+	 * Variable que dice si el archivo se ha guardado o no.
+	 */
 	private boolean guardar;
+	/**
+	 * El escenario de la aplicacion
+	 */
 	private static Stage escenario;
+	/**
+	 * El file que se usa en la aplicacion.
+	 */
 	private static File f;
 
 	

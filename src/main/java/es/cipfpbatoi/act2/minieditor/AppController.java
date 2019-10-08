@@ -154,8 +154,9 @@ public class AppController implements Initializable {
 	 * Cierra el documento y desabilita el editor de textos.
 	 */
 	public void handleCerrar() {
+		guardar=true;
 		Vacio();
-		handleNuevo();
+		taEditor.setText("");
 		taEditor.setDisable(true);
 		f=new File("");
 		Cambiar_titulo_aplicacion();
@@ -292,7 +293,7 @@ public class AppController implements Initializable {
 
 	/**
 	 * @param Titulo El titulo que tendra el elemento FileChooser
-	 * @return fc Devuelve el FileChhoser
+	 * @return fc Devuelve el FileChooser
 	 */
 	public FileChooser creaAbrirFileChooser(String Titulo) {
 		FileChooser fc = new FileChooser();
@@ -416,6 +417,7 @@ public class AppController implements Initializable {
 	 * El metodo que decide si el campo de texto esta vacio.
 	 */
 	public void Vacio() {
+		
 		boolean texto_vacio = taEditor.getText().isEmpty();
 		
 		/*
@@ -436,7 +438,7 @@ public class AppController implements Initializable {
 			 */
 			
 			if (option.get() == ButtonType.OK) {
-				guardar=false;
+				
 				Guardar();
 			} else {
 				taEditor.setText("");
@@ -458,7 +460,7 @@ public class AppController implements Initializable {
 		
 		try (BufferedReader br = Files.newBufferedReader(archivo_a_guardar)) {
 			
-			String linea = null;
+			String linea = "";
 			
 			/*
 			 * Anyade todas las lineas leidas al ArrayList.
@@ -488,8 +490,17 @@ public class AppController implements Initializable {
 	 */
 	public void Mostrar_informacion() {
 		String informacion = "";
-		informacion = "Archivo: " + f.getName() + " tiene " + taEditor.getText().split("\n").length + " lineas, Tiene "
+		
+		try {
+			informacion = "Archivo: " + f.getName();
+		}
+		catch (NullPointerException e) {
+			informacion = "Archivo: Nuevo";
+		}
+		
+		informacion = informacion + " tiene " + taEditor.getText().split("\n").length + " lineas, Tiene "
 				+ (taEditor.getText().length() - 1) + " caracteres.";
+		
 		lblInfo.setText(informacion);
 	}
 

@@ -31,6 +31,7 @@ import javafx.stage.Stage;
  * @author sergio
  */
 public class AppController implements Initializable {
+	
 	/**
 	 * Limite de los archivos recientes
 	 * en el archivo archivos_recientes.txt
@@ -71,7 +72,7 @@ public class AppController implements Initializable {
 	 * Desplegable que muestra los archivos recientes.
 	 */
 	@FXML
-	private ChoiceBox archivos_recientes;
+	private ChoiceBox<String> archivos_recientes;
 	/**
 	 * Variable que dice si el archivo se ha guardado o no.
 	 */
@@ -156,6 +157,8 @@ public class AppController implements Initializable {
 		Vacio();
 		handleNuevo();
 		taEditor.setDisable(true);
+		f=new File("");
+		Cambiar_titulo_aplicacion();
 	}
 
 	/**
@@ -250,6 +253,8 @@ public class AppController implements Initializable {
 			}
 		} catch (NullPointerException e) {
 			System.err.println("No se ha elegido un archivo");
+			guardar=true;
+			Guardar();
 		} catch (Exception e) {
 			System.err.println("Error general");
 		}
@@ -402,6 +407,7 @@ public class AppController implements Initializable {
 
 		} catch (Exception e) {
 			System.err.print("");
+			guardar = true;
 		}
 
 	}
@@ -430,6 +436,7 @@ public class AppController implements Initializable {
 			 */
 			
 			if (option.get() == ButtonType.OK) {
+				guardar=false;
 				Guardar();
 			} else {
 				taEditor.setText("");
